@@ -185,6 +185,256 @@ button:focus-visible{outline:3px solid #8d6bb5;outline-offset:3px}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,18px);opacity:0;pointer-events:none;z-index:100;background:#2c2440;color:#fff;border-radius:999px;padding:10px 14px;font-size:10px;transition:.18s;box-shadow:0 10px 28px rgba(0,0,0,.18)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
+
+/* ===== Desktop layout ===== */
+@media (min-width: 900px){
+  .app-shell{
+    padding:32px;
+  }
+
+  .phone{
+    width:min(1180px, calc(100vw - 64px));
+    min-height:760px;
+    max-height:none;
+    border-radius:34px;
+    overflow:auto;
+  }
+
+  /* HOME */
+  .screen.active.home{
+    display:grid;
+    grid-template-columns:minmax(0, 1.08fr) minmax(390px, .92fr);
+    grid-template-rows:auto 1fr;
+    column-gap:26px;
+    align-items:center;
+    padding:0 26px 26px;
+  }
+
+  .home .statusbar{
+    grid-column:1 / -1;
+    margin:0 -8px;
+  }
+
+  .home-art{
+    grid-column:1;
+    grid-row:2;
+    margin:0;
+    height:620px;
+    border-radius:30px;
+    background-position:center 34%;
+  }
+
+  .home-copy{
+    grid-column:2;
+    grid-row:2;
+    margin:0;
+    padding:34px 32px 30px;
+    text-align:left;
+  }
+
+  .eyebrow{
+    text-align:left;
+    font-size:12px;
+  }
+
+  .home h1{
+    text-align:left;
+    font-size:42px;
+    line-height:1.24;
+  }
+
+  .home h1 strong{
+    font-size:58px;
+    margin-top:3px;
+  }
+
+  .home-copy p{
+    text-align:left;
+    font-size:14px;
+    line-height:1.9;
+  }
+
+  .start{
+    max-width:360px;
+    margin-top:22px;
+  }
+
+  .home-badges{
+    justify-content:flex-start;
+  }
+
+  /* QUIZ */
+  .screen.active.quiz{
+    display:grid;
+    grid-template-columns:minmax(0, 1.05fr) minmax(420px, .95fr);
+    grid-template-rows:auto auto auto 1fr auto;
+    column-gap:26px;
+    padding:0 26px 24px;
+  }
+
+  .quiz .statusbar,
+  .quiz-top{
+    grid-column:1 / -1;
+  }
+
+  .quiz-top{
+    padding:12px 0 0;
+  }
+
+  .question-art{
+    grid-column:1;
+    grid-row:3 / span 2;
+    margin:14px 0 0;
+    height:520px;
+    border-radius:28px;
+  }
+
+  .question-card{
+    grid-column:2;
+    grid-row:3;
+    margin:14px 0 0;
+    padding:24px 22px 22px;
+  }
+
+  .question-card h2{
+    font-size:29px;
+    line-height:1.55;
+  }
+
+  .question-card p{
+    font-size:12px;
+  }
+
+  .options{
+    grid-column:2;
+    grid-row:4;
+    align-self:start;
+    padding:14px 0 0;
+    gap:12px;
+  }
+
+  .option{
+    padding:15px 15px;
+    border-radius:19px;
+  }
+
+  .option strong{
+    font-size:14px;
+  }
+
+  .option small{
+    font-size:10.5px;
+  }
+
+  .quiz-foot{
+    grid-column:1 / -1;
+    grid-row:5;
+    padding:16px 0 0;
+  }
+
+  /* RESULT */
+  .screen.active.result{
+    display:grid;
+    grid-template-columns:minmax(0, .92fr) minmax(440px, 1.08fr);
+    grid-template-rows:auto auto auto auto auto;
+    column-gap:22px;
+    row-gap:14px;
+    padding:0 26px 24px;
+    align-items:start;
+  }
+
+  .result .statusbar{
+    grid-column:1 / -1;
+    margin:0 -8px;
+  }
+
+  .result-cover{
+    grid-column:1;
+    grid-row:2;
+    margin:0;
+    height:430px;
+    border-radius:30px;
+  }
+
+  .result-main{
+    grid-column:2;
+    grid-row:2;
+    margin:0;
+    padding:24px 22px;
+  }
+
+  .result h2{
+    font-size:36px;
+  }
+
+  .result-desc{
+    font-size:13px;
+  }
+
+  .step-card{
+    grid-column:2;
+    grid-row:3;
+    margin:0;
+    padding:19px 18px;
+  }
+
+  .insight-card{
+    grid-column:1;
+    grid-row:3 / span 2;
+    margin:0;
+    padding:18px 17px;
+  }
+
+  .insight-grid{
+    gap:11px;
+  }
+
+  .insight{
+    padding:14px 13px;
+  }
+
+  .insight h4{
+    font-size:11px;
+  }
+
+  .insight p{
+    font-size:11.5px;
+  }
+
+  .actions-card{
+    grid-column:2;
+    grid-row:4;
+    margin:0;
+    padding:18px 17px;
+  }
+
+  .action{
+    padding:13px 12px;
+  }
+
+  .action strong{
+    font-size:12.5px;
+  }
+
+  .result-actions{
+    grid-column:2;
+    grid-row:5;
+    padding:0;
+    gap:10px;
+  }
+
+  .again-wrap{
+    grid-column:1;
+    grid-row:5;
+    padding:0;
+  }
+
+  .cta,
+  .again{
+    min-height:48px;
+  }
+}
+
 @media(max-width:460px){
   .app-shell{padding:0}
   .phone{width:100%;min-height:100vh;border-radius:0}
@@ -511,6 +761,24 @@ function xShare(){window.open(`https://twitter.com/intent/tweet?text=${encodeURI
 
 function wrap(ctx,text,max){const rows=[];let line="";for(const ch of text){const t=line+ch;if(ctx.measureText(t).width>max&&line){rows.push(line);line=ch}else line=t}if(line)rows.push(line);return rows}
 
+function drawImageCover(ctx,img,dx,dy,dw,dh,focalY=.5){
+  const imageRatio=img.width/img.height;
+  const boxRatio=dw/dh;
+
+  let sx=0, sy=0, sw=img.width, sh=img.height;
+
+  if(imageRatio>boxRatio){
+    sw=img.height*boxRatio;
+    sx=(img.width-sw)/2;
+  }else{
+    sh=img.width/boxRatio;
+    sy=(img.height-sh)*focalY;
+    sy=Math.max(0,Math.min(sy,img.height-sh));
+  }
+
+  ctx.drawImage(img,sx,sy,sw,sh,dx,dy,dw,dh);
+}
+
 async function resultBlob(){
  const r=results[resultKey],a=r.actions[selectedAction],t=themes[resultKey];
  const img=new Image();img.src=typeImages[resultKey];await img.decode();
@@ -522,7 +790,13 @@ async function resultBlob(){
   inspire:["#38295d","#8c68b5","#f2e9ff"]
  };
  const g=x.createLinearGradient(0,0,0,1350);g.addColorStop(0,bgMap[resultKey][0]);g.addColorStop(.55,bgMap[resultKey][1]);g.addColorStop(1,bgMap[resultKey][2]);x.fillStyle=g;x.fillRect(0,0,1080,1350);
- x.save();x.beginPath();x.roundRect(65,65,950,530,45);x.clip();x.drawImage(img,65,65,950,530);x.restore();
+ const focalMap={challenge:.36,prepare:.34,together:.40,inspire:.36};
+ x.save();
+ x.beginPath();
+ x.roundRect(65,65,950,530,45);
+ x.clip();
+ drawImageCover(x,img,65,65,950,530,focalMap[resultKey] ?? .36);
+ x.restore();
  const shade=x.createLinearGradient(0,70,0,595);shade.addColorStop(0,"rgba(20,14,45,.02)");shade.addColorStop(1,"rgba(20,14,45,.58)");x.fillStyle=shade;x.beginPath();x.roundRect(65,65,950,530,45);x.fill();
  x.fillStyle="#fff9ef";x.textAlign="center";x.font="700 30px sans-serif";x.fillText("わたしに合う 最初の一歩診断",540,120);
  x.font="86px sans-serif";x.fillText(r.icon,540,322);
